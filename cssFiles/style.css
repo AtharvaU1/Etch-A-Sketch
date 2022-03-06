@@ -15,10 +15,40 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
-.cell {
-    border: 1px solid blue;
+.cell , .drawn0, .drawn1, .drawn2, .drawn3, .drawn4, .drawn5, .drawn6, .drawn7, .drawn8, .drawn9{
+    border: 1px solid #000000;
+    background-color: #FFF;
 }
-
 .drawn{
     background-color: red;
+}
+.drawn0{
+    background-color: #DCDCDC;
+}
+.drawn1{
+    background-color: #D3D3D3;
+}
+.drawn2{
+    background-color: #C0C0C0;
+}
+.drawn3{
+    background-color: #989898;
+}
+.drawn4{
+    background-color: #808080;
+}
+.drawn5{
+    background-color: #696969;
+}
+.drawn6{
+    background-color: #505050;
+}
+.drawn7{
+    background-color: #303030;
+}
+.drawn8{
+    background-color: #181818;
+}
+.drawn9{
+    background-color: #000000;
 }
