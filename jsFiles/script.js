@@ -1,13 +1,3 @@
-// const viewportHeight = document.documentElement.clientHeight;
-// const viewportWidth = document.documentElement.clientWidth;
-
-// // const wrapperSide = viewportWidth*0.4;
-// // const wrapper = document.querySelector('.wrapper');
-// // wrapper.setAttribute('style', `width:${wrapperSide}px; height:${wrapperSide}px`);
-
-// console.log(viewportWidth);
-// console.log(wrapperSide);
-
 const container = document.querySelector(".wrapper");
 let gridNodeList = document.querySelectorAll('.cell');
 
@@ -24,12 +14,10 @@ function createGrid(row, column){
     gridNodeList = document.querySelectorAll('.cell');
 
     let isDrawing = false;
-    gridNodeList.forEach(grid => {
+    gridNodeList.forEach(grid => {   
         grid.addEventListener('mousedown', () => {
             if(!isDrawing){
                 isDrawing = true;
-                
-                
                 grid.className = increaseIntensity(grid.classList[0]);
             }
         });
@@ -41,7 +29,6 @@ function createGrid(row, column){
         grid.addEventListener('mouseup', () => {
             if(isDrawing){
                 isDrawing = false;
-                grid.className = increaseIntensity(grid.classList[0]);
             }
         });
     });
@@ -52,8 +39,7 @@ function increaseIntensity(currentClass){
     if(currentClass=='drawn9') return 'drawn9';
 
     const curNum = parseInt(currentClass[5])+1;
-    const newClass = 'drawn' + curNum.toString(); 
-    console.log(newClass);
+    const newClass = 'drawn' + curNum.toString();
     
     return newClass;
 }
@@ -63,7 +49,7 @@ clearButton.addEventListener('click', clearGrid);
 
 function clearGrid(){
     gridNodeList.forEach(grid => {
-        grid.classList.remove('drawn');
+        grid.className = 'cell';
     });
 }
 
@@ -75,7 +61,7 @@ function takeInput(){
     const rowsNum = parseInt(rows);
     if(rowsNum>=1 && rowsNum<=100){
         createGrid(rowsNum, rowsNum);
-    }else{
+    }else if(rows!=undefined){
         alert("Please enter a number between 1 and 100.");
     }
 }

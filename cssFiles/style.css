@@ -1,22 +1,60 @@
 :root{
     --grid-cols: 1;
     --grid-rows: 1;
+    background-color: #5C9EAD;
+    color: #1D1E18;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .header{
+    font-size: 2rem;
     text-align: center;
 }
+.outerWrapper{
+    display: flex;    
+    margin: 2% auto;
+    width: fit-content;
+}
+.buttonClass{
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    width: 7vw;
+    font-size: 1rem;
+    transition-duration: 0.3s;
+}
+button:hover{
+    background-color: #000000;
+    color: #FFF;
+}
 .wrapper{
-    width: 800px;
-    height: 800px;
-    margin: 0 auto;
-    border: 1px solid red;
+    width: 750px;
+    height: 750px;
+    border: 1px solid #404040;
 
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
+.footer{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    color: inherit;
+}
 .cell , .drawn0, .drawn1, .drawn2, .drawn3, .drawn4, .drawn5, .drawn6, .drawn7, .drawn8, .drawn9{
-    border: 1px solid #000000;
+    border: 1px solid #404040;
     background-color: #FFF;
 }
 .drawn{
@@ -51,4 +89,33 @@
 }
 .drawn9{
     background-color: #000000;
+}
+
+@media(max-width:951px){
+    .outerWrapper{
+        flex-direction: column;
+        width: 85vw;
+    }
+    .buttonClass{
+        height: 7vh;
+        flex-direction: row;
+        width: 100%;
+    }
+    button{
+        height: 5vh;
+        width: fit-content;
+    }
+    .wrapper{
+        height: 85vw;
+        width: 100%;
+    }
+}
+
+@media(max-width:480px){
+    .header{
+        font-size: 1rem;
+    }
+    button{
+        font-size: .5rem;
+    }
 }
