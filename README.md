@@ -1,1 +1,1 @@
-# Etch-A-Sketch
+Learning intermediate DOM Manipulation in JavaScript.

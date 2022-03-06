@@ -1,0 +1,24 @@
+:root{
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+.header{
+    text-align: center;
+}
+.wrapper{
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    border: 1px solid red;
+
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+.cell {
+    border: 1px solid blue;
+}
+
+.drawn{
+    background-color: red;
+}
